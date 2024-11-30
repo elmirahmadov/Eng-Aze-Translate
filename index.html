@@ -19,7 +19,7 @@
         flex-direction: column;
         justify-content: center;
         height: 100vh;
-        overflow-x: hidden;
+        overflow: hidden;
       }
 
       header {
@@ -29,6 +29,9 @@
         position: sticky;
         top: 0;
         width: 100%;
+        display: flex;
+        justify-content: center; /* Centering content horizontally */
+        align-items: center; /* Centering content vertically */
       }
 
       footer {
@@ -40,6 +43,9 @@
         position: sticky;
         bottom: 0;
         width: 100%;
+        display: flex;
+        justify-content: center; /* Centering content horizontally */
+        align-items: center; /* Centering content vertically */
       }
 
       main {
@@ -184,9 +190,10 @@
         background-color: #e67e22;
       }
 
+      /* Responsive Design for Mobile */
       @media (max-width: 600px) {
         h1 {
-          font-size: 20px;
+          font-size: 18px; /* Even smaller font size for heading */
         }
 
         #select-questions,
@@ -194,79 +201,86 @@
         #restart-container,
         #game-over-container {
           width: 90%;
-          padding: 15px;
+          padding: 10px;
         }
 
         #answer {
-          padding: 10px;
-          font-size: 14px;
+          padding: 8px;
+          font-size: 12px; /* Even smaller font size for inputs */
         }
 
         #submit-button {
-          padding: 10px 15px;
-          font-size: 14px;
+          padding: 8px 12px;
+          font-size: 12px; /* Even smaller font size for buttons */
         }
 
         #result {
-          font-size: 18px;
+          font-size: 16px; /* Smaller result font */
         }
 
         #correct-answers,
         #incorrect-answers {
-          font-size: 16px;
+          font-size: 14px; /* Adjust result colors for smaller size */
         }
 
         #start-button {
-          padding: 10px 20px;
-          font-size: 16px;
+          padding: 8px 15px;
+          font-size: 14px; /* Smaller font size for start button */
         }
 
         .restart-button {
-          padding: 10px 20px;
-          font-size: 14px;
+          padding: 8px 15px;
+          font-size: 12px; /* Smaller font size for restart button */
+        }
+        header,
+        footer {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 90%;
         }
       }
 
       @media (max-width: 400px) {
         h1 {
-          font-size: 18px;
+          font-size: 18px; /* Even smaller font size for heading */
         }
 
         #select-questions,
         #question-container,
         #restart-container,
         #game-over-container {
-          width: 100%;
+          width: 90%;
           padding: 10px;
         }
 
         #answer {
           padding: 8px;
-          font-size: 12px;
+          font-size: 12px; /* Even smaller font size for inputs */
         }
 
         #submit-button {
           padding: 8px 12px;
-          font-size: 12px;
+          font-size: 12px; /* Even smaller font size for buttons */
         }
 
         #result {
-          font-size: 16px;
+          font-size: 16px; /* Smaller result font */
         }
 
         #correct-answers,
         #incorrect-answers {
-          font-size: 14px;
+          font-size: 14px; /* Adjust result colors for smaller size */
         }
 
         #start-button {
           padding: 8px 15px;
-          font-size: 14px;
+          font-size: 14px; /* Smaller font size for start button */
         }
 
         .restart-button {
           padding: 8px 15px;
-          font-size: 12px;
+          font-size: 12px; /* Smaller font size for restart button */
         }
       }
     </style>
