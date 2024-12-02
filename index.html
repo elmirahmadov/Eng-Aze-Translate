@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EB</title>
+    <title>Banu Əmi</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -283,6 +283,44 @@
           font-size: 12px; /* Smaller font size for restart button */
         }
       }
+      #voice-button {
+        padding: 10px 24px;
+        font-size: 16px;
+        border-radius: 4px;
+        background-color: #27ae60;
+        color: white;
+        border: 1px solid #388e3c;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      #voice-button:hover {
+        background-color: #45a049;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      #voice-button:active {
+        background-color: #388e3c;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transform: translateY(2px);
+      }
+      #submit-button:active {
+        background-color: #388e3c;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transform: translateY(2px);
+      }
+      #submit-button {
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .div-1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+      }
     </style>
   </head>
   <body>
@@ -319,9 +357,12 @@
           placeholder="Write your answer here"
           oninput="enableSubmitButton()"
         />
-        <button id="submit-button" onclick="checkAnswer()" disabled>
-          Answer
-        </button>
+        <div class="div-1">
+          <button id="submit-button" onclick="checkAnswer()" disabled>
+            Answer
+          </button>
+          <button id="voice-button" onclick="readQuestion()">🎤 Voice</button>
+        </div>
         <p id="result"></p>
         <p id="correct-answers">Correct Answers: 0</p>
         <p id="incorrect-answers">Wrong Answers: 0</p>
@@ -993,6 +1034,25 @@
 
       function exitGame() {
         window.close();
+      }
+      function readQuestion() {
+        const questionText = document.getElementById("question").textContent;
+
+        const speech = new SpeechSynthesisUtterance();
+        speech.text = questionText;
+
+        const voices = window.speechSynthesis.getVoices();
+
+        // Amerikan aksanlı kadın sesi seçimi
+        const femaleVoice = voices.find(
+          (voice) =>
+            voice.name.includes("Google US English") && voice.lang === "en-US"
+        );
+
+        speech.voice = femaleVoice || voices[0]; // Eğer uygun bir kadın sesi bulunamazsa, varsayılan sesi kullan
+        speech.lang = "en-US"; // Amerikan İngilizcesi
+
+        window.speechSynthesis.speak(speech);
       }
     </script>
   </body>
