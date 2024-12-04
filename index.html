@@ -245,95 +245,75 @@
 
       /* Responsive Design for Mobile */
       @media (max-width: 600px) {
+        /* Başlık boyutlarını küçült */
         h1 {
-          font-size: 18px; /* Even smaller font size for heading */
+          font-size: 20px;
         }
 
+        /* #select-questions, #question-container ve diğer container'lar için daha küçük padding ve genişlik */
         #select-questions,
         #question-container,
         #restart-container,
         #game-over-container {
           width: 90%;
-          padding: 10px;
+          padding: 15px;
         }
 
+        /* Input alanları daha büyük yap */
         #answer {
-          padding: 12px;
+          padding: 15px;
           width: 100%;
-          max-width: 400px; /* Genişliği sınırlayın */
           font-size: 16px;
-          border-radius: 25px; /* Yumuşak köşe yuvarlama */
-          border: 2px solid #bdc3c7; /* Gri kenarlık */
-          background-color: rgba(
-            255,
-            255,
-            255,
-            0.8
-          ); /* Hafif beyaz arka plan */
-          margin: 10px 0; /* Üst ve alt boşluk */
-          outline: none; /* Odaklanınca çıkan kenarlığı kaldırır */
-          transition: all 0.3s ease; /* Geçiş efekti */
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
         }
 
-        #answer:focus {
-          border-color: #2ecc71; /* Odaklanıldığında yeşil kenarlık */
-          background-color: rgba(
-            255,
-            255,
-            255,
-            1
-          ); /* Odaklanınca arka planı beyaz yap */
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Daha belirgin gölge */
-        }
-
+        /* Submit butonunu daha küçük yap */
         #submit-button {
-          padding: 8px 12px;
-          font-size: 12px; /* Even smaller font size for buttons */
-        }
-
-        #result {
-          font-size: 16px; /* Smaller result font */
-        }
-
-        #correct-answers,
-        #incorrect-answers {
-          font-size: 14px; /* Adjust result colors for smaller size */
-        }
-
-        #start-button {
-          padding: 8px 15px;
-          font-size: 14px; /* Smaller font size for start button */
-        }
-
-        .restart-button {
-          padding: 8px 15px;
-          font-size: 12px; /* Smaller font size for restart button */
-        }
-        header,
-        footer {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 90%;
-        }
-        #voice-button {
-          padding: 8px 18px;
+          padding: 10px 15px;
           font-size: 14px;
         }
-        #question {
-          font-size: 18px; /* Reduce the font size for smaller screens */
-          width: 90%; /* Make the text container take up more space on small screens */
-          max-width: none; /* Remove any width limitations */
-          padding: 15px; /* Adjust padding for smaller screens */
+
+        /* Result yazı boyutunu küçült */
+        #result {
+          font-size: 16px;
+        }
+
+        /* Correct ve incorrect yazı boyutlarını küçült */
+        #correct-answers,
+        #incorrect-answers {
+          font-size: 14px;
+        }
+
+        /* Başlangıç butonunu küçült */
+        #start-button {
+          padding: 10px 15px;
+          font-size: 14px;
+        }
+
+        /* Restart butonunu küçült */
+        .restart-button {
+          padding: 10px 15px;
+          font-size: 14px;
+        }
+
+        /* Voice butonunu küçült */
+        #voice-button {
+          padding: 8px 14px;
+          font-size: 14px;
+        }
+        #answer {
+          padding: 15px;
+          width: 90%; /* Mobil ekranlarda tam genişlik */
+          font-size: 16px; /* Font boyutunu uygun tut */
         }
       }
 
+      /* Çok daha küçük ekranlar için */
       @media (max-width: 400px) {
         h1 {
-          font-size: 18px; /* Even smaller font size for heading */
+          font-size: 18px;
         }
 
+        /* Container'ları daha küçük yap */
         #select-questions,
         #question-container,
         #restart-container,
@@ -344,36 +324,36 @@
 
         #submit-button {
           padding: 8px 12px;
-          font-size: 12px; /* Even smaller font size for buttons */
+          font-size: 12px;
         }
 
         #result {
-          font-size: 16px; /* Smaller result font */
+          font-size: 14px;
         }
 
         #correct-answers,
         #incorrect-answers {
-          font-size: 14px; /* Adjust result colors for smaller size */
+          font-size: 12px;
         }
 
         #start-button {
           padding: 8px 15px;
-          font-size: 14px; /* Smaller font size for start button */
+          font-size: 12px;
         }
 
         .restart-button {
-          padding: 8px 15px;
-          font-size: 12px; /* Smaller font size for restart button */
-        }
-        #voice-button {
-          padding: 6px 14px;
+          padding: 8px 12px;
           font-size: 12px;
         }
-        #question {
-          font-size: 18px; /* Reduce the font size for smaller screens */
-          width: 90%; /* Make the text container take up more space on small screens */
-          max-width: none; /* Remove any width limitations */
-          padding: 15px; /* Adjust padding for smaller screens */
+
+        #voice-button {
+          padding: 6px 12px;
+          font-size: 12px;
+        }
+        #answer {
+          padding: 15px;
+          width: 90%; /* Mobil ekranlarda tam genişlik */
+          font-size: 16px; /* Font boyutunu uygun tut */
         }
       }
       #question {
