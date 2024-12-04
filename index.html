@@ -1098,17 +1098,19 @@
 
         const voices = window.speechSynthesis.getVoices();
 
-        // Google US English kadın sesini seç (Amerikan aksanı)
-        const femaleVoice = voices.find(
+        // Google US English erkek sesini seç (Amerikan aksanı)
+        const maleVoice = voices.find(
           (voice) =>
-            voice.name === "Google US English" && voice.lang === "en-US"
+            voice.name === "Google US English" &&
+            voice.lang === "en-US" &&
+            voice.gender === "male"
         );
 
         // Eğer uygun bir ses bulunamazsa, varsayılan sesi kullan
-        speech.voice = femaleVoice || voices[0];
+        speech.voice = maleVoice || voices[0];
         speech.lang = "en-US"; // Amerikan İngilizcesi
-        speech.rate = 0.8; // Konuşma hızını yavaşlat
-        speech.pitch = 1.2; // Ses tonunu (pitch) biraz artır
+        speech.rate = 0.9; // Konuşma hızını optimize et (normal hızın biraz altında)
+        speech.pitch = 1.0; // Ses tonunu normalde tut
 
         window.speechSynthesis.speak(speech);
       }
